@@ -6,9 +6,16 @@
     <description>Notes on payments, data science, product management, and economics.</description>
     <language>en</language>
     <atom:link href="https://phrrancis.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sun, 04 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 12:00:00 +0000</lastBuildDate>
 
     <!-- Add new posts at the TOP. Update lastBuildDate above. -->
+    <item>
+      <title>What the Riksbank Says About Structural Unemployment in Sweden</title>
+      <link>https://phrrancis.github.io/blog/2026/riksbank-structural-unemployment-sweden.html</link>
+      <guid isPermaLink="true">https://phrrancis.github.io/blog/2026/riksbank-structural-unemployment-sweden.html</guid>
+      <pubDate>Fri, 23 Oct 2026 12:00:00 +0000</pubDate>
+      <description>A chart and an excerpt from the Riksbank's Monetary Policy Report on why most unemployment in Sweden is structural, and what that means for people born abroad or without upper secondary education.</description>
+    </item>
     <item>
       <title>Great Career Advice from Dara Khosrowshahi (Uber CEO)</title>
       <link>https://phrrancis.github.io/blog/2023/great-career-advice-from-dara-khosrowshahi.html</link>
