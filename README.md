@@ -1,7 +1,7 @@
-# francis.github.io
+# phrrancis.github.io
 
 Source for my personal website and blog, live at
-[phrrancis.github.io/francis.github.io](https://phrrancis.github.io/francis.github.io/).
+[phrrancis.github.io](https://phrrancis.github.io/).
 
 It is a plain static site: hand-written HTML and CSS, a small script for dark
 mode, and no build step. Pushes to `main` are deployed by GitHub Actions
@@ -42,8 +42,8 @@ python3 -m http.server 8000
 
 Then visit <http://localhost:8000/>.
 
-The site is published under the `/francis.github.io/` subpath, so links and
-asset paths are relative rather than rooted at `/`.
+Links and asset paths are relative, so the site also works when served from a
+subfolder.
 
 ## Adding a blog post
 
