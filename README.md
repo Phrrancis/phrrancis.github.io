@@ -1,42 +1,59 @@
-# Francis Awagu's Personal Website
+# francis.github.io
 
-Welcome to the repository for my personal website! 🚀  
+Source for my personal website and blog, live at
+[phrrancis.github.io/francis.github.io](https://phrrancis.github.io/francis.github.io/).
 
-This website serves as my online portfolio where you can learn more about me, explore my work, and stay updated on what I’m currently focused on.  
+It is a plain static site: hand-written HTML and CSS, a small script for dark
+mode, and no build step. Pushes to `main` are deployed by GitHub Actions
+(`.github/workflows/static.yml`).
 
-Feel free to visit the live website here: [Francis Awagu's Personal Website](https://phrrancis.github.io/francis.github.io).  
+## What's on the site
 
----
+- **Home**: short bio, side projects, recent writing, and contact links.
+- **Blog**: posts on payments, data science, product management, and economics.
+- **RSS**: `feed.xml`, hand-maintained.
+- **Dark mode**: follows the system preference, with a manual toggle.
 
-## 🌟 Features
-- 📋 **About Me**: A brief introduction about who I am and what I do.  
-- 🏗 **Side Projects**: Discover some of the exciting projects I’m working on.  
-- 📬 **Get in Touch**: Links to my social media profiles and direct contact details.  
-- ✍️ **Blog**: Posts on payments, data science, product management, and economics. Plain HTML, no build step.  
-- 🌙 **Dark mode**: Follows system preference, with a manual toggle.  
+## Layout
 
----
+```
+.
+├── .github/workflows/static.yml   # Deploys the repo to GitHub Pages on push to main
+├── index.html                     # Home page
+├── blog/
+│   ├── index.html                 # Post list, newest first
+│   ├── _template.html             # Starting point for a new post
+│   └── YYYY/                      # One folder per year; images live in YYYY/images/
+├── feed.xml                       # RSS feed
+├── stylesheets/                   # normalise.css and stylesheet.css
+├── js/theme.js                    # Dark mode toggle
+├── favicon.svg
+└── profile_pic.jpg
+```
 
-## 🛠 Tech Stack
-This project utilizes the following technologies:
-- **HTML5**: Semantic, accessible, and clean markup.  
-- **CSS3**: Customized and modern styling with a normalized base.  
-- **Google Fonts**: Beautiful typography.  
-- **Plausible Analytics**: Privacy-friendly web analytics (integrated with the site).  
+## Working locally
 
----
+There is nothing to install. Open `index.html` in a browser, or serve the
+folder so relative links behave the same as on GitHub Pages:
 
-## 📂 Repository Structure
-francis.github.io/
-│
-├── .github/                # GitHub configuration files
-├── blog/                   # Blog index, post template, and posts by year
-│   ├── index.html
-│   ├── _template.html      # Copy this to write a new post
-│   └── 2026/
-├── js/theme.js             # Dark mode toggle
-├── stylesheets/            # CSS files for styling
-├── feed.xml                # RSS feed (hand-maintained)
-├── index.html              # Main entry point for the website
-├── profile_pic.jpg         # Profile picture used on the website
-├── README.md               # This file
+```
+python3 -m http.server 8000
+```
+
+Then visit <http://localhost:8000/>.
+
+The site is published under the `/francis.github.io/` subpath, so links and
+asset paths are relative rather than rooted at `/`.
+
+## Adding a blog post
+
+1. Copy `blog/_template.html` to `blog/YYYY/your-slug.html` and replace the
+   `POST_TITLE`, `POST_SUMMARY`, `POST_SLUG`, and `YYYY-MM-DD` placeholders.
+2. Add the post to the top of the list in `blog/index.html`.
+3. Add it to the "Writing" list in `index.html`, keeping only the three newest.
+4. Add an `<item>` at the top of `feed.xml` and update `lastBuildDate`.
+
+## Third-party services
+
+- Google Fonts (Roboto Mono)
+- [Plausible](https://plausible.io) for privacy-friendly analytics
